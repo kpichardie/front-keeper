@@ -1,0 +1,29 @@
+{% extends "default.html" %}
+
+{% block body %}
+<h1>{{ the_title }}</h1>
+<div class="row">
+    <div class="span5">
+	    <h2> Welcome to Frontkeeper !</h2>
+          <p>This is a front-end to passkeeper to manage your passwords.
+	   <br>             
+	  - To init you passkeeper repos please go to init page and set the password. 
+	  <br>
+          - To search a password, first decrypt you files then search pattern into search page
+	  <br>
+	  - When you have finished, remenber to encrypt your password to avoid someone else access !
+	  <br>
+	  - To improve security you can flush git history of your password in Flush page 
+          <br>
+	  <h5>/!\ Noticed that the password could be changed at each encryption !</h5>
+       </p> 
+<!--      <form method="post" action="">
+        <p><input type="text" name="pass déchiffrement" /></p>
+	<p><input type="submit" value="Envoyer" /></p>
+      </form> -->
+    </div>
+    <div class="span5">
+    </div>
+</div>
+
+{% endblock %}

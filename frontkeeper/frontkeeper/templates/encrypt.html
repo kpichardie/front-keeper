@@ -1,0 +1,31 @@
+{% extends "default.html" %}
+
+    <SCRIPT language="javascript" type="text/javascript" src="/static/logtailencrypt.js"></script>
+    <SCRIPT language="javascript" type="text/javascript" src="/static/jquery.min.js"></script>
+{% block body %}
+<h1>{{ the_title }}</h1>
+<div class="row">
+    <div class="span5">
+      <form action="/encrypt/" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit" style="margin-bottom: 10px" />
+
+	<div id="header">
+	    Logs :
+            <a href="./">Reversed</a> or
+            <a href="./?noreverse">chronological</a> view.
+            <a id="pause" href='#'>Pause</a>	
+	</div>
+	 <pre id="data-encrypt">Loading...</pre>
+      </form>
+<!--      <form method="post" action="">
+        <p><input type="text" name="pass déchiffrement" /></p>
+	<p><input type="submit" value="Envoyer" /></p>
+      </form> -->
+    </div>
+    <div class="span5">
+    </div>
+</div>
+
+{% endblock %}

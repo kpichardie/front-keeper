@@ -36,7 +36,9 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
     'django.contrib.staticfiles',
+    'frontkeeper',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -55,7 +57,7 @@ ROOT_URLCONF = 'frontkeeper.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'frontkeeper/templates/')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -67,6 +69,14 @@ TEMPLATES = [
         },
     },
 ]
+
+STATICFILES_DIRS = (
+            os.path.join(BASE_DIR, 'static'),
+)
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'frontkeeper/static')
+
+#STATICFILES_STORAGE = os.path.join(BASE_DIR, 'static')
 
 WSGI_APPLICATION = 'frontkeeper.wsgi.application'
 

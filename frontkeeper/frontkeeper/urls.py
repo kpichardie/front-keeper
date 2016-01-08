@@ -13,9 +13,20 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
-from django.conf.urls import include, url
+from django.conf.urls import include, url, patterns
 from django.contrib import admin
 
-urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
-]
+urlpatterns = patterns('frontkeeper.views',
+  #  url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', 'index.index'),
+    url(r'^decrypt/', 'decrypt.decrypt'),
+    url(r'^encrypt/', 'encrypt.encrypt'),
+    url(r'^display/', 'display.display'),
+    url(r'^init/', 'init.init'),
+    url(r'^search/', 'search.search'),
+    url(r'^flush/', 'flush.flush'),
+    url(r'^edit/(?P<filename>.+)', 'edit.edit', name='edit'),
+    url(r'^new/', 'new.new'),
+    url(r'^list/', 'list.list'),
+)
+
