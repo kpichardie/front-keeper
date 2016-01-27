@@ -1,7 +1,8 @@
 from debian:latest
 
-run apt-get update && apt-get install -y \
-    git python-pip python-virtualenv python-dev 
-    run pip install django
-    run git clone https://github.com/kpichardie/front-keeper.git
+run apt-get update 
+run apt-get install -y git python-pip  
+run pip install django
+run git clone https://github.com/kpichardie/front-keeper.git
+run pip install git+git://github.com/shaftmx/passkeeper -r https://raw.githubusercontent.com/shaftmx/passkeeper/master/requirements.txt --upgrade
 
