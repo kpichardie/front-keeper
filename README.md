@@ -11,3 +11,8 @@ It include feacture :
 - List : List all ini password files
 - New : Add new ini password file
 - Search : Search a content in your ini files
+
+Configuration in settings.py :
+
+PASSKEEPER_PATH : Path of the passkeeper directory (could permit to integrate an initialied one)
+
