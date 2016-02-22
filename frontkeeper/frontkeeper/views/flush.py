@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.template import Context, loader
 from django.http import HttpResponse
 
@@ -41,7 +42,7 @@ def flush(request):
             # ...
             # redirect to a new URL:
             log = init_logger()
-            mypasskeeper = Passkeeper(directory='/opt/mypasskeeper')
+            mypasskeeper = Passkeeper(directory=settings.PASSKEEPER_PATH)
             mypasskeeper.flush_history()
             #return HttpResponseRedirect('/')
 

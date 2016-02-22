@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.template import Context, loader
 from django.http import HttpResponse
 
@@ -42,7 +43,7 @@ def init(request):
             # ...
             # redirect to a new URL:
             log = init_logger()
-            mypasskeeper = Passkeeper(directory='/opt/mypasskeeper')
+            mypasskeeper = Passkeeper(directory=settings.PASSKEEPER_PATH)
             mypasskeeper.init_dir(passphrase=form.cleaned_data['password'])
             #return HttpResponseRedirect('/')
 
