@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.template import Context, loader
 from django.http import HttpResponse
 
@@ -51,9 +52,8 @@ def list(request):
     #    form = SubmitForm()
 
     #return render(request, 'flush.html', {'form': form})
-    passkeeperdir = '/opt/mypasskeeper'
     files = []
-    for fname in os.listdir(passkeeperdir):
+    for fname in os.listdir(path=settings.PASSKEEPERPATH):
         file_path = os_join(passkeeperdir, fname)
         if (fname.endswith('.ini') and os.path.isfile(file_path)):
             files.append(fname)

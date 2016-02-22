@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.template import Context, loader
 from django.http import HttpResponse
 
@@ -43,8 +44,7 @@ def edit(request, filename):
             # redirect to a new URL:
             log = init_logger()
             print filename
-            passkeeperpath = '/opt/mypasskeeper/'
-            f = open(os.path.join(passkeeperpath, filename), 'w')
+            f = open(os.path.join(settings.PASSKEEPERPATH, filename), 'w')
             f.write(form.cleaned_data['info'])
             f.close()
             #fd = os.open(os.path.join(passkeeperpath, filename), os.O_WRONLY)
@@ -54,8 +54,7 @@ def edit(request, filename):
 
     # if a GET (or any other method) we'll create a blank form
     else:
-        passkeeperpath = '/opt/mypasskeeper/'
-        f = open(os.path.join(passkeeperpath, filename), 'r')
+        f = open(os.path.join(settings.PASSKEEPERPATH, filename), 'r')
         content = f.read()
         f.close()
         #fd = os.open(os.path.join(passkeeperpath, filename), os.O_RDONLY)

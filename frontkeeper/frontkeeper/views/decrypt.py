@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.template import Context, loader
 from django.http import HttpResponse
 
@@ -39,7 +40,7 @@ def decrypt(request):
             # ...
             # redirect to a new URL:
             log = init_logger()
-            mypasskeeper = Passkeeper('/opt/mypasskeeper')
+            mypasskeeper = Passkeeper(directory=settings.PASSKERPERPATH)
             mypasskeeper.decrypt(passphrase=form.cleaned_data['password'])
             #return HttpResponseRedirect('/')
 
