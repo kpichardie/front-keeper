@@ -112,3 +112,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 PASSKEEPER_PATH = '/opt/mypasskeeper'
+
+PASSKEEPER_ENCRYPT_STATE = '0'

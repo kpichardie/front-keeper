@@ -47,6 +47,7 @@ def encrypt(request):
             LOG.info('test %s' % mypasskeeper.directory)
             mypasskeeper.encrypt(commit_message="Update encrypted files through frontkeeper",passphrase=form.cleaned_data['password'])
             mypasskeeper.cleanup_ini()
+            settings.PASSKEEPER_ENCRYPT_STATE = '1'
             #return HttpResponseRedirect('/')
 
     # if a GET (or any other method) we'll create a blank form

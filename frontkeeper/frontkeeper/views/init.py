@@ -45,6 +45,7 @@ def init(request):
             log = init_logger()
             mypasskeeper = Passkeeper(directory=settings.PASSKEEPER_PATH)
             mypasskeeper.init_dir(passphrase=form.cleaned_data['password'])
+            settings.PASSKEEPER_ENCRYPT_STATE = '1'
             #return HttpResponseRedirect('/')
 
     # if a GET (or any other method) we'll create a blank form

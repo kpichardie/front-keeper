@@ -42,6 +42,7 @@ def decrypt(request):
             log = init_logger()
             mypasskeeper = Passkeeper(directory=settings.PASSKEEPER_PATH)
             mypasskeeper.decrypt(passphrase=form.cleaned_data['password'])
+            settings.PASSKEEPER_ENCRYPT_STATE = '0'
             #return HttpResponseRedirect('/')
 
     # if a GET (or any other method) we'll create a blank form
