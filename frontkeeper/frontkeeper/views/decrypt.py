@@ -40,7 +40,7 @@ def decrypt(request):
             # ...
             # redirect to a new URL:
             log = init_logger()
-            mypasskeeper = Passkeeper(directory=settings.PASSKERPERPATH)
+            mypasskeeper = Passkeeper(directory=settings.PASSKEEPER_PATH)
             mypasskeeper.decrypt(passphrase=form.cleaned_data['password'])
             #return HttpResponseRedirect('/')
 
