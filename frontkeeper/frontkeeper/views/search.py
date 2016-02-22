@@ -42,7 +42,7 @@ def search(request):
             # ...
             # redirect to a new URL:
             log = init_logger()
-            mypasskeeper = Passkeeper(directory=settings.PASSKEEPERPATH)
+            mypasskeeper = Passkeeper(directory=settings.PASSKEEPER_PATH)
             (config, match) = mypasskeeper.search(
                               pattern=form.cleaned_data['search'])
             matching = {}

@@ -43,7 +43,7 @@ def new(request):
             # ...
             # redirect to a new URL:
             log = init_logger()
-            filepath = os.path.join(settings.PASSKEEPERPATH, form.cleaned_data['filename'])
+            filepath = os.path.join(settings.PASSKEEPER_PATH, form.cleaned_data['filename'])
             print filepath
             if os.path.exists(filepath + str('.ini')):
                 print "file already exist"

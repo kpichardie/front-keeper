@@ -43,7 +43,7 @@ def init(request):
             # ...
             # redirect to a new URL:
             log = init_logger()
-            mypasskeeper = Passkeeper(directory=settings.PASSKEEPERPATH)
+            mypasskeeper = Passkeeper(directory=settings.PASSKEEPER_PATH)
             mypasskeeper.init_dir(passphrase=form.cleaned_data['password'])
             #return HttpResponseRedirect('/')
 

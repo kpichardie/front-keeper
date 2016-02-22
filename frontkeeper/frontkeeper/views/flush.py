@@ -42,7 +42,7 @@ def flush(request):
             # ...
             # redirect to a new URL:
             log = init_logger()
-            mypasskeeper = Passkeeper(directory=settings.PASSKEEPERPATH)
+            mypasskeeper = Passkeeper(directory=settings.PASSKEEPER_PATH)
             mypasskeeper.flush_history()
             #return HttpResponseRedirect('/')
 

@@ -53,8 +53,8 @@ def list(request):
 
     #return render(request, 'flush.html', {'form': form})
     files = []
-    for fname in os.listdir(path=settings.PASSKEEPERPATH):
-        file_path = os_join(passkeeperdir, fname)
+    for fname in os.listdir(settings.PASSKEEPER_PATH):
+        file_path = os_join(settings.PASSKEEPER_PATH, fname)
         if (fname.endswith('.ini') and os.path.isfile(file_path)):
             files.append(fname)
 

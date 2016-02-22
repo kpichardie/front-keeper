@@ -44,7 +44,7 @@ def edit(request, filename):
             # redirect to a new URL:
             log = init_logger()
             print filename
-            f = open(os.path.join(settings.PASSKEEPERPATH, filename), 'w')
+            f = open(os.path.join(settings.PASSKEEPER_PATH, filename), 'w')
             f.write(form.cleaned_data['info'])
             f.close()
             #fd = os.open(os.path.join(passkeeperpath, filename), os.O_WRONLY)
@@ -54,7 +54,7 @@ def edit(request, filename):
 
     # if a GET (or any other method) we'll create a blank form
     else:
-        f = open(os.path.join(settings.PASSKEEPERPATH, filename), 'r')
+        f = open(os.path.join(settings.PASSKEEPER_PATH, filename), 'r')
         content = f.read()
         f.close()
         #fd = os.open(os.path.join(passkeeperpath, filename), os.O_RDONLY)
