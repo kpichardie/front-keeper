@@ -43,7 +43,7 @@ def encrypt(request):
             # ...
             # redirect to a new URL:
             log = init_logger()
-            mypasskeeper = Passkeeper(directory=settings.PASSKEEPERPASS)
+            mypasskeeper = Passkeeper(directory=settings.PASSKEEPER_PATH)
             LOG.info('test %s' % mypasskeeper.directory)
             mypasskeeper.encrypt(commit_message="Update encrypted files through frontkeeper",passphrase=form.cleaned_data['password'])
             mypasskeeper.cleanup_ini()
