@@ -16,3 +16,6 @@ Configuration in settings.py :
 
 PASSKEEPER_PATH : Path of the passkeeper directory (could permit to integrate an initialied one)
 
+PASSKEEPER_ENCRYPT_STATE : Default encryption state of passkeeper (1 : encrypted, 0 : decrypted)
+
+NB : Insure your frontkeeper is encrypted if it's not new one, by default passkeeper consider it's on encrypted state. You can also change it in settings.
