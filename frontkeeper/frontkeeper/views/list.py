@@ -69,5 +69,11 @@ def list(request):
         'request': request,
         'files': files,
     })
-    return render(request, 'list.html', context=({'the_title': the_title,'request': request,'files': files}))
+
+    if settings.PASSKEEPER_ENCRYPT_STATE: 
+        state='Decrypted /!\/!\/!\  Don\'t forget to encrypt before leaving /!\/!\/!\ ' 
+    else:
+        state='Encrypted'
+
+    return render(request, 'list.html', context=({'the_title': the_title,'request': request,'files': files, 'state': state}))
 

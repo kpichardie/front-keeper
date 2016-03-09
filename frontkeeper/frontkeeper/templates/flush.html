@@ -7,8 +7,9 @@
       <form action="/flush/" method="post">
         {% csrf_token %}
         {{ form }}
-	<label for="submit">Submit git history flush:</label>
-        <input type="submit" value="Submit" />
+	<label for="submit">Submit git history flush:</label><input type="submit" value="Submit" />
+
+	<br/><br/>Current state : <font color=red> {{ state }} </font>
 	<div id="header">
 	     Logs:
             <a href="./">Reversed</a> or
@@ -25,5 +26,4 @@
     <div class="span5">
     </div>
 </div>
-
 {% endblock %}
