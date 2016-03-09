@@ -9,8 +9,8 @@
 	{% load tags %}
 	{% for filename  in files %}
         <form method="post" action="">{% csrf_token %}
-	<a href='{% url 'edit' filename %}'>{{filename}}</a>
-	<input type="submit" value="Remove" name=Remove"><input type="hidden" name=fileid value='{{filename}}'/>
+	<div> <a style="padding-right:50px" href='{% url 'edit' filename %}'>{{filename}}</a>
+	<input type="submit" value="Remove" name=Remove"><input type="hidden" name=fileid value='{{filename}}'/></div>
 	</form>
 	
         {% endfor %}
