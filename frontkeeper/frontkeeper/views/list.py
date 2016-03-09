@@ -4,7 +4,7 @@ from django.http import HttpResponse
 
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from .forms import SubmitForm
+from .forms import CustomForm
 
 import logging
 
@@ -52,6 +52,10 @@ def list(request):
     #    form = SubmitForm()
 
     #return render(request, 'flush.html', {'form': form})
+
+
+    if request.method == 'POST': 
+       os.remove(os.path.join(settings.PASSKEEPER_PATH, request.POST['fileid']))
     files = []
     for fname in os.listdir(settings.PASSKEEPER_PATH):
         file_path = os_join(settings.PASSKEEPER_PATH, fname)
@@ -65,4 +69,5 @@ def list(request):
         'request': request,
         'files': files,
     })
-    return HttpResponse(t.render(c))
+    return render(request, 'list.html', context=({'the_title': the_title,'request': request,'files': files}))
+
