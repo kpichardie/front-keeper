@@ -7,14 +7,13 @@
 
 	   <h2> File list : </h2>
 	{% load tags %}
-        <form method="post" action="">{% csrf_token %}
 	{% for filename  in files %}
-	          
+        <form method="post" action="">{% csrf_token %}
 	<a href='{% url 'edit' filename %}'>{{filename}}</a>
-	<input type="submit" value="Remove" name=Remove"><input type="hidden" name=fileid value='{{filename}}'/><br/>
+	<input type="submit" value="Remove" name=Remove"><input type="hidden" name=fileid value='{{filename}}'/>
+	</form>
 	
         {% endfor %}
-	</form>
 <!--      <form method="post" action="">
         <p><input type="text" name="pass déchiffrement" /></p>
 	<p><input type="submit" value="Envoyer" /></p>
