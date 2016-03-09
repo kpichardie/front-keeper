@@ -52,4 +52,9 @@ def init(request):
     else:
         form = PasswordForm()
 
-    return render(request, 'init.html', {'form': form})
+    if settings.PASSKEEPER_ENCRYPT_STATE: 
+        state='Decrypted /!\/!\/!\ No need to init /!\/!\/!\ '
+    else:
+        state='Encrypted or clean /!\/!\/!\ you will erase passwords if existing /!\/!\/!\ ' 
+
+    return render(request, 'init.html', context={'form': form,'state': state})

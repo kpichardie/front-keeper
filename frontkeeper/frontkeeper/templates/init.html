@@ -8,6 +8,8 @@
         {% csrf_token %}
         {{ form }}
         <input type="submit" value="Submit"  style="margin-bottom: 10px" />
+
+	<br/>Current state : <font color=red> {{ state }} </font>
 	<div id="header">
 	    Logs:
             <a href="./">Reversed</a> or

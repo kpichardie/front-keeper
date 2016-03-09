@@ -50,4 +50,11 @@ def flush(request):
     else:
         form = SubmitForm()
 
-    return render(request, 'flush.html', {'form': form})
+
+
+    if settings.PASSKEEPER_ENCRYPT_STATE: 
+        state='Decrypted /!\/!\/!\  Don\'t forget to encrypt before leaving /!\/!\/!\ '
+    else:
+        state='Encrypted'
+
+    return render(request, 'flush.html', context={'form': form, 'state': state})

@@ -49,4 +49,9 @@ def decrypt(request):
     else:
         form = PasswordForm()
 
-    return render(request, 'decrypt.html', {'form': form})
+    if settings.PASSKEEPER_ENCRYPT_STATE: 
+        state='Decrypted /!\/!\/!\ No need to do it again /!\/!\/!\ '
+    else:
+        state='Encrypted, you can decrypt'
+
+    return render(request, 'decrypt.html', context={'form': form, 'state': state})

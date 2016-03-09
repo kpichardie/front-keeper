@@ -58,5 +58,10 @@ def search(request):
     # if a GET (or any other method) we'll create a blank form
     else:
         form = SearchForm()
+    
+    if settings.PASSKEEPER_ENCRYPT_STATE: 
+        state='Decrypted, Make your search'
+    else:
+        state='Encrypted /!\/!\/!\ Decrypt first to be able to make search /!\/!\/!\ '
 
-    return render(request, 'search.html', {'form': form})
+    return render(request, 'search.html', context={'form': form, 'state': state})
