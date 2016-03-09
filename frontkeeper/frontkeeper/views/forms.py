@@ -28,6 +28,9 @@ class EditForm(forms.Form):
                                                         }))
     validate = "valid"
 
+class CustomForm(forms.Form):
+    validate = "valid"
+
 
 class ReadForm(forms.Form):
 
