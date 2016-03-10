@@ -52,9 +52,9 @@ def flush(request):
 
 
 
-    if settings.PASSKEEPER_ENCRYPT_STATE: 
-        state='Decrypted /!\/!\/!\  Don\'t forget to encrypt before leaving /!\/!\/!\ '
-    else:
+    if settings.PASSKEEPER_ENCRYPT_STATE is True: 
         state='Encrypted'
+    else:
+        state='Decrypted /!\/!\/!\  Don\'t forget to encrypt before leaving /!\/!\/!\ '
 
     return render(request, 'flush.html', context={'form': form, 'state': state})

@@ -113,4 +113,4 @@ STATIC_URL = '/static/'
 
 PASSKEEPER_PATH = '/opt/mypasskeeper'
 
-PASSKEEPER_ENCRYPT_STATE = '1'
+PASSKEEPER_ENCRYPT_STATE = 'True'

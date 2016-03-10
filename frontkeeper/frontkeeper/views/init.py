@@ -45,16 +45,16 @@ def init(request):
             log = init_logger()
             mypasskeeper = Passkeeper(directory=settings.PASSKEEPER_PATH)
             mypasskeeper.init_dir(passphrase=form.cleaned_data['password'])
-            settings.PASSKEEPER_ENCRYPT_STATE = '1'
+            settings.PASSKEEPER_ENCRYPT_STATE = 'True'
             #return HttpResponseRedirect('/')
 
     # if a GET (or any other method) we'll create a blank form
     else:
         form = PasswordForm()
 
-    if settings.PASSKEEPER_ENCRYPT_STATE: 
-        state='Decrypted /!\/!\/!\ No need to init /!\/!\/!\ '
-    else:
+    if settings.PASSKEEPER_ENCRYPT_STATE is True: 
         state='Encrypted or clean /!\/!\/!\ you will erase passwords if existing /!\/!\/!\ ' 
+    else:
+        state='Decrypted /!\/!\/!\ No need to init /!\/!\/!\ '
 
     return render(request, 'init.html', context={'form': form,'state': state})
