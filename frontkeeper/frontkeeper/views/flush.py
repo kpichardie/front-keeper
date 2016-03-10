@@ -43,7 +43,19 @@ def flush(request):
             # redirect to a new URL:
             log = init_logger()
             mypasskeeper = Passkeeper(directory=settings.PASSKEEPER_PATH)
+            with open("log/frontkeeper.views.flush.log", "w"):
+                pass
             mypasskeeper.flush_history()
+            with open("log/frontkeeper.views.decrypt.log", "w"):
+                pass
+            with open("log/frontkeeper.views.edit.log", "w"):
+                pass
+            with open("log/frontkeeper.views.encrypt.log", "w"):
+                pass
+            with open("log/frontkeeper.views.new.log", "w"):
+                pass
+            with open("log/frontkeeper.views.init.log", "w"):
+                pass
             #return HttpResponseRedirect('/')
 
     # if a GET (or any other method) we'll create a blank form
