@@ -19,6 +19,7 @@ class NewForm(forms.Form):
                                                         'rows': 30,
                                                         'style': 'width: auto;'
                                                         }))
+    rawfile = forms.CharField(label='This file is a raw file', widget=forms.CheckboxInput)
     validate = "valid"
 
 class EditForm(forms.Form):
