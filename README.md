@@ -49,7 +49,7 @@ git clone https://github.com/kpichardie/front-keeper.git
 
 ```/usr/bin/python manage.py runserver 0.0.0.0:8080 ```
 
-## NGINX CONF --
+## NGINX CONF 
 
 ```
 server {
