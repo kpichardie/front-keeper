@@ -59,7 +59,7 @@ def search(request):
     else:
         form = SearchForm()
     
-    if settings.PASSKEEPER_ENCRYPT_STATE is True: 
+    if settings.PASSKEEPER_ENCRYPT_STATE == "True": 
         state='Encrypted /!\/!\/!\ Decrypt first to be able to make search /!\/!\/!\ '
     else:
         state='Decrypted, Make your search'

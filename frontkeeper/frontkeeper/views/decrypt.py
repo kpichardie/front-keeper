@@ -49,7 +49,7 @@ def decrypt(request):
     else:
         form = PasswordForm()
 
-    if settings.PASSKEEPER_ENCRYPT_STATE is True: 
+    if settings.PASSKEEPER_ENCRYPT_STATE == "True": 
         state='Encrypted, you can decrypt'
     else:
         state='Decrypted /!\/!\/!\ No need to do it again /!\/!\/!\ '

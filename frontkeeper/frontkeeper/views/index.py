@@ -9,7 +9,7 @@ def index(request):
     #request.path
     the_title = "Frontkeeper Home";
     t = loader.get_template('index.html')
-    if settings.PASSKEEPER_ENCRYPT_STATE is True: 
+    if settings.PASSKEEPER_ENCRYPT_STATE == "True": 
         state='Encrypted, you can decrypt to access password'  
     else:
         state='Decrypted /!\/!\/!\  Don\'t forget to encrypt before leaving /!\/!\/!\ '

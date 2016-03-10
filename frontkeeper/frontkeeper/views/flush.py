@@ -52,7 +52,7 @@ def flush(request):
 
 
 
-    if settings.PASSKEEPER_ENCRYPT_STATE is True: 
+    if settings.PASSKEEPER_ENCRYPT_STATE == "True": 
         state='Encrypted'
     else:
         state='Decrypted /!\/!\/!\  Don\'t forget to encrypt before leaving /!\/!\/!\ '

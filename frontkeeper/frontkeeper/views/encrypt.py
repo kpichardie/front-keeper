@@ -46,15 +46,16 @@ def encrypt(request):
             mypasskeeper = Passkeeper(directory=settings.PASSKEEPER_PATH)
             LOG.info('test %s' % mypasskeeper.directory)
             mypasskeeper.encrypt(commit_message="Update encrypted files through frontkeeper",passphrase=form.cleaned_data['password'])
-            mypasskeeper.cleanup_ini()
+            mypasskeeper.cleanup_ini(force_remove=True)
             settings.PASSKEEPER_ENCRYPT_STATE = 'True'
+            print settings.PASSKEEPER_ENCRYPT_STATE
             #return HttpResponseRedirect('/')
 
     # if a GET (or any other method) we'll create a blank form
     else:
         form = PasswordForm()
 
-    if settings.PASSKEEPER_ENCRYPT_STATE is True: 
+    if settings.PASSKEEPER_ENCRYPT_STATE == "True": 
         state='Encrypted /!\/!\/!\ It\'s already encrypted /!\/!\/!\ ' 
     else:
         state='Decrypted, you can encrypt'
