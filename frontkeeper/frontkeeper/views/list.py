@@ -62,6 +62,13 @@ def list(request):
         if (fname.endswith('.ini') and os.path.isfile(file_path)):
             files.append(fname)
 
+    filesraw = []
+    for fname in os.listdir(settings.PASSKEEPER_PATH):
+        file_path = os_join(settings.PASSKEEPER_PATH, fname)
+        if (fname.endswith('.raw') and os.path.isdir(file_path)):
+            for f in os.listdir(file_path):
+                filesraw.append(os_join(file_path, f))
+
     the_title = "Front-keeper"
     t = loader.get_template('list.html')
     c = Context({
@@ -75,5 +82,5 @@ def list(request):
     else:
         state='Decrypted /!\/!\/!\  Don\'t forget to encrypt before leaving /!\/!\/!\ ' 
 
-    return render(request, 'list.html', context=({'the_title': the_title,'request': request,'files': files, 'state': state}))
+    return render(request, 'list.html', context=({'the_title': the_title,'request': request,'files': files, 'filesraw': filesraw, 'state': state}))
 

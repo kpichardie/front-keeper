@@ -44,13 +44,23 @@ def new(request):
             # redirect to a new URL:
             log = init_logger()
             filepath = os.path.join(settings.PASSKEEPER_PATH, form.cleaned_data['filename'])
-            print filepath
-            if os.path.exists(filepath + str('.ini')):
-                print "file already exist"
-                return render(request, 'new.html', {'form': form})
-            f = open(filepath + str('.ini'), 'w+')
-            f.write(form.cleaned_data['info'])
-            f.close()
+            filetype = form.cleaned_data['rawfile']
+            if filetype:
+                rawfullpath = os_join(settings.PASSKEEPER_PATH, "default.raw",form.cleaned_data['filename'])
+                if os.path.exists(rawfullpath):
+                     print "file already exist"
+                     return render(request, 'new.html', {'form': form})
+
+                f = open(rawfullpath, 'w+')
+                f.write(form.cleaned_data['info'])
+                f.close()
+            else:
+                if os.path.exists(filepath + str('.ini')):
+                    print "file already exist"
+                    return render(request, 'new.html', {'form': form})
+                f = open(filepath + str('.ini'), 'w+')
+                f.write(form.cleaned_data['info'])
+                f.close()
             #fc = os.open(filepath, os.O_CREAT)
             #fd = os.open(filepath, os.O_WRONLY)
             #os.write(fd, form.cleaned_data['info'])

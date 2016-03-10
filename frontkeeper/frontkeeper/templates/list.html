@@ -5,11 +5,20 @@
 <div class="row">
     <div class="span5">
 
-	   <h2> File list : </h2>
+	   <h2> Password file list : </h2>
 	{% load tags %}
 	{% for filename  in files %}
         <form method="post" action="">{% csrf_token %}
 	<div> <a style="padding-right:50px" href='{% url 'edit' filename %}'>{{filename}}</a>
+	<input type="submit" value="Remove" name=Remove"><input type="hidden" name=fileid value='{{filename}}'/></div>
+	</form>
+	
+        {% endfor %}
+
+          <h2> Raw file list : </h2>
+	{% for filename  in filesraw %}
+        <form method="post" action="">{% csrf_token %}
+	<div> <font style="padding-right:50px">{{filename}}</font>
 	<input type="submit" value="Remove" name=Remove"><input type="hidden" name=fileid value='{{filename}}'/></div>
 	</form>
 	
