@@ -50,6 +50,7 @@ def init(request):
 
     # if a GET (or any other method) we'll create a blank form
     else:
+    if not settings.DISABLE_INIT:
         form = PasswordForm()
 
     if settings.PASSKEEPER_ENCRYPT_STATE is True: 
