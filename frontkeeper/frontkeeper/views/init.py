@@ -50,12 +50,13 @@ def init(request):
 
     # if a GET (or any other method) we'll create a blank form
     else:
-    if not settings.DISABLE_INIT:
-        form = PasswordForm()
+        if not settings.DISABLE_INIT:
+            form = PasswordForm()
 
-    if settings.PASSKEEPER_ENCRYPT_STATE is True: 
-        state='Encrypted or clean /!\/!\/!\ you will erase passwords if existing /!\/!\/!\ ' 
-    else:
-        state='Decrypted /!\/!\/!\ No need to init /!\/!\/!\ '
+            if settings.PASSKEEPER_ENCRYPT_STATE is True: 
+                state='Encrypted or clean /!\/!\/!\ you will erase passwords if existing /!\/!\/!\ ' 
+            else:
+                state='Decrypted /!\/!\/!\ No need to init /!\/!\/!\ '
 
-    return render(request, 'init.html', context={'form': form,'state': state})
+            return render(request, 'init.html', context={'form': form,'state': state})
+        return render(request, 'init-disabled.html')
