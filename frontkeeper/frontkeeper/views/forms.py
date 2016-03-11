@@ -2,7 +2,7 @@ from django import forms
 
 
 class SearchForm(forms.Form):
-    search = forms.CharField(label='Your search', max_length=100)
+    search = forms.CharField(label='Search in password', max_length=100)
 
 
 class PasswordForm(forms.Form):

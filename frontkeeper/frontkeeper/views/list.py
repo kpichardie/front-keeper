@@ -62,12 +62,12 @@ def list(request):
         if (fname.endswith('.ini') and os.path.isfile(file_path)):
             files.append(fname)
 
-    filesraw = []
+    filesraw = {}
     for fname in os.listdir(settings.PASSKEEPER_PATH):
         file_path = os_join(settings.PASSKEEPER_PATH, fname)
         if (fname.endswith('.raw') and os.path.isdir(file_path)):
             for f in os.listdir(file_path):
-                filesraw.append(os_join(file_path, f))
+                filesraw[f] = {'path':file_path , 'name':f}
 
     the_title = "Front-keeper"
     t = loader.get_template('list.html')

@@ -22,10 +22,10 @@
     </div>
     <div class="span5">
           <h2> Raw file list : </h2>
-	{% for filename  in filesraw %}
+	{% for filename, value  in filesraw.iteritems %}
         <form method="post" action="">{% csrf_token %}
-	<div> <font style="padding-right:50px">{{filename}}</font>
-	<input type="submit" value="Remove" name=Remove"><input type="hidden" name=fileid value='{{filename}}'/></div>
+	<div> <font style="padding-right:50px">{{value.name}}</font>
+		<input type="submit" value="Remove" name=Remove"><input type="hidden" name=fileid value='{{value.path}}'/></div>
 	</form>
 	
         {% endfor %}
