@@ -57,6 +57,7 @@ def encrypt(request):
 
     if settings.PASSKEEPER_ENCRYPT_STATE == "True": 
         state='Encrypted /!\/!\/!\ It\'s already encrypted /!\/!\/!\ ' 
+        return render(request, 'encrypt-disabled.html', context={'form': form, 'state': state})
     else:
         state='Decrypted, you can encrypt'
 
