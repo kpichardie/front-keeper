@@ -28,5 +28,6 @@ urlpatterns = patterns('frontkeeper.views',
     url(r'^edit/(?P<filename>.+)', 'edit.edit', name='edit'),
     url(r'^new/', 'new.new'),
     url(r'^list/', 'list.list'),
+    url(r'^clean/', 'clean.clean'),
 )
 
