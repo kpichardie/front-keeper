@@ -5,6 +5,7 @@ from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .forms import NewForm
+from .forms import CustomForm
 
 import logging
 import os
@@ -69,6 +70,11 @@ def new(request):
 
     # if a GET (or any other method) we'll create a blank form
     else:
-        form = NewForm()
+        if settings.PASSKEEPER_ENCRYPT_STATE == "True":
+            form = CustomForm()
+            return render(request, 'new-disabled.html', {'form': form})
+        else:
+            form = NewForm()
+            return render(request, 'new.html', {'form': form})
 
     return render(request, 'new.html', {'form': form})
