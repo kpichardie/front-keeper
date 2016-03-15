@@ -61,6 +61,7 @@ def search(request):
     
     if settings.PASSKEEPER_ENCRYPT_STATE == "True": 
         state='Encrypted /!\/!\/!\ Decrypt first to be able to make search /!\/!\/!\ '
+        return render(request, 'search-disabled.html', context={'form': form, 'state': state})
     else:
         state='Decrypted, Make your search'
 
