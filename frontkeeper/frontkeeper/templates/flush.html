@@ -7,7 +7,7 @@
       <form action="/flush/" method="post">
         {% csrf_token %}
         {{ form }}
-	<label for="submit">Submit git history flush:</label><input type="submit" value="Submit" />
+	<label for="submit">Submit to flush git history and log history :</label><input type="submit" value="Submit" />
 
 	<br/><br/>Current state : <font color=red> {{ state }} </font>
 	<div id="header">
