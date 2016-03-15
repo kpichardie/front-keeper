@@ -59,5 +59,6 @@ def decrypt(request):
         state='Encrypted, you can decrypt'
     else:
         state='Decrypted /!\/!\/!\ No need to do it again /!\/!\/!\ '
+        return render(request, 'decrypt-disabled.html', context={'form': form, 'state': state})
 
     return render(request, 'decrypt.html', context={'form': form, 'state': state})
