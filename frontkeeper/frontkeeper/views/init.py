@@ -1,34 +1,24 @@
 from django.conf import settings
-from django.template import Context, loader
-from django.http import HttpResponse
-
-from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .forms import PasswordForm
-
-
 import logging
+import os
+from passkeeper import Passkeeper
 
-from passkeeper import *
 
 def init_logger():
-       # Init logging level with debug stream handler
-       log = logging.getLogger('passkeeper')
-       log.setLevel(logging.INFO)
-       #log.setLevel(logging.DEBUG)
-       logformat =  '%(asctime)s %(levelname)s -: %(message)s'
-       # Set logger formater
-       formatter = logging.Formatter(logformat)
-       # Stream handler
-       #hdl = logging.StreamHandler()
-       #hdl.setFormatter(formatter)
-       #log.addHandler(hdl)
-       ## File handler
-       hdl = logging.FileHandler('log/%s.log' % __name__)
-       hdl.setFormatter(formatter)
-       log.addHandler(hdl)
-       return log
-
+    # Init logging level with debug stream handler
+    log = logging.getLogger('passkeeper')
+    log.setLevel(logging.INFO)
+    # log.setLevel(logging.DEBUG)
+    logformat = '%(asctime)s %(levelname)s -: %(message)s'
+    # Set logger formater
+    formatter = logging.Formatter(logformat)
+    # File handler
+    hdl = logging.FileHandler('log/%s.log' % __name__)
+    hdl.setFormatter(formatter)
+    log.addHandler(hdl)
+    return log
 
 
 #  init
@@ -37,28 +27,23 @@ def init(request):
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
         form = PasswordForm(request.POST)
-        # check whether it's valid:
-        if form.is_valid():
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
-            log = init_logger()
+        if form.passwordis_valid():
+            init_logger()
             mypasskeeper = Passkeeper(directory=settings.PASSKEEPER_PATH)
             mypasskeeper.init_dir(passphrase=form.cleaned_data['password'])
-            f = open(settings.PASSKEEPER_ENCRYPT_STATE_FILE , 'w+')
+            f = open(settings.PASSKEEPER_ENCRYPT_STATE_FILE, 'w+')
             f.write("")
             f.close()
-            #return HttpResponseRedirect('/')
-
     # if a GET (or any other method) we'll create a blank form
     else:
         if not settings.DISABLE_INIT:
             form = PasswordForm()
-
-            if os.path.exists(settings.PASSKEEPER_ENCRYPT_STATE_FILE): 
-                state='Encrypted or clean /!\/!\/!\ you will erase passwords if existing /!\/!\/!\ ' 
+            if os.path.exists(settings.PASSKEEPER_ENCRYPT_STATE_FILE):
+                state = 'Encrypted or clean /!\/!\/!\ you will erase \
+passwords if existing /!\/!\/!\ '
             else:
-                state='Decrypted /!\/!\/!\ No need to init /!\/!\/!\ '
+                state = 'Decrypted /!\/!\/!\ No need to init /!\/!\/!\ '
 
-            return render(request, 'init.html', context={'form': form,'state': state})
+            return render(request, 'init.html',
+                          context={'form': form, 'state': state})
         return render(request, 'init-disabled.html')

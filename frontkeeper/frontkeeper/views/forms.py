@@ -19,8 +19,10 @@ class NewForm(forms.Form):
                                                         'rows': 30,
                                                         'style': 'width: auto;'
                                                         }))
-    rawfile = forms.CharField(label='This file is a raw file', widget=forms.CheckboxInput)
+    rawfile = forms.CharField(label='This file is a raw file',
+                              widget=forms.CheckboxInput)
     validate = "valid"
+
 
 class EditForm(forms.Form):
     info = forms.CharField(widget=forms.Textarea(attrs={'cols': 160,
@@ -29,6 +31,7 @@ class EditForm(forms.Form):
                                                         }))
     validate = "valid"
 
+
 class CustomForm(forms.Form):
     validate = "valid"
 
@@ -36,14 +39,3 @@ class CustomForm(forms.Form):
 class ReadForm(forms.Form):
 
     filename = forms.CharField(widget=forms.Textarea(attrs={'rows': 1}))
-    #def loadcontent(filename):
-    #    passkeeperpath = '/opt/mypasskeeper/'
-    #    fd = os.open(os.path.join(passkeeperpath, filename), os.O_RDONLY)
-    #    content = os.read(fd)
-    #    os.close(fd)
-    #    info = forms.CharField(widget=forms.Textarea(attrs={'cols': 160,
-    #                                                        'rows': 30,
-    #                                                        'style': 'width: auto;',
-    #                                                        'content': content
-    #                                                        }))
-    #    validate = "valid"
