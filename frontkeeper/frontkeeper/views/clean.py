@@ -43,15 +43,17 @@ def clean(request):
 
     # if a GET (or any other method) we'll create a blank form
 
-    if settings.PASSKEEPER_ENCRYPT_STATE == "True": 
+    if os.path.exists(settings.PASSKEEPER_ENCRYPT_STATE_FILE): 
         state='Encrypted /!\/!\/!\ It\'s already encrypted /!\/!\/!\ ' 
     else:
         state='Decrypted, you can encrypt'
         settings.PASSKEEPER_ENCRYPT_STATE = 'True'
+        f = open(settings.PASSKEEPER_ENCRYPT_STATE_FILE, 'w+')
+        f.write("")
+        f.close()
         log = init_logger()
         mypasskeeper = Passkeeper(directory=settings.PASSKEEPER_PATH)
         mypasskeeper.cleanup_ini(force_remove=True)
-        print settings.PASSKEEPER_ENCRYPT_STATE
         
     return HttpResponseRedirect('/')
 

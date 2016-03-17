@@ -115,4 +115,8 @@ PASSKEEPER_PATH = '/opt/mypasskeeper'
 
 PASSKEEPER_ENCRYPT_STATE = 'True'
 
+PASSKEEPER_ENCRYPT_STATE_FILE = 'encrypt.lock'
+
 DISABLE_INIT = 'False'
+
+

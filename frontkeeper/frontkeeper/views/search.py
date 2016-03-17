@@ -59,7 +59,7 @@ def search(request):
     else:
         form = SearchForm()
     
-    if settings.PASSKEEPER_ENCRYPT_STATE == "True": 
+    if os.path.exists(settings.PASSKEEPER_ENCRYPT_STATE_FILE): 
         state='Encrypted /!\/!\/!\ Decrypt first to be able to make search /!\/!\/!\ '
         return render(request, 'search-disabled.html', context={'form': form, 'state': state})
     else:

@@ -77,7 +77,7 @@ def list(request):
         'files': files,
     })
 
-    if settings.PASSKEEPER_ENCRYPT_STATE == "True": 
+    if os.path.exists(settings.PASSKEEPER_ENCRYPT_STATE_FILE): 
         state='Encrypted'
     else:
         state='Decrypted /!\/!\/!\  Don\'t forget to encrypt before leaving /!\/!\/!\ ' 

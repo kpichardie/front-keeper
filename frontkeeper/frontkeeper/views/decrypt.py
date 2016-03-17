@@ -43,19 +43,18 @@ def decrypt(request):
             mypasskeeper = Passkeeper(directory=settings.PASSKEEPER_PATH)
 
             decryption = mypasskeeper.decrypt(passphrase=form.cleaned_data['password'])
-            print decryption
             if not decryption:
                 settings.PASSKEEPER_ENCRYPT_STATE = 'True'
             else:
                 settings.PASSKEEPER_ENCRYPT_STATE = 'False'
-            print settings.PASSKEEPER_ENCRYPT_STATE
+                os.remove(settings.PASSKEEPER_ENCRYPT_STATE_FILE)
             #return HttpResponseRedirect('/')
 
     # if a GET (or any other method) we'll create a blank form
     else:
         form = PasswordForm()
 
-    if settings.PASSKEEPER_ENCRYPT_STATE == "True": 
+    if os.path.exists(settings.PASSKEEPER_ENCRYPT_STATE_FILE): 
         state='Encrypted, you can decrypt'
     else:
         state='Decrypted /!\/!\/!\ No need to do it again /!\/!\/!\ '

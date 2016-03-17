@@ -70,7 +70,7 @@ def new(request):
 
     # if a GET (or any other method) we'll create a blank form
     else:
-        if settings.PASSKEEPER_ENCRYPT_STATE == "True":
+        if os.path.exists(settings.PASSKEEPER_ENCRYPT_STATE_FILE):
             form = CustomForm()
             return render(request, 'new-disabled.html', {'form': form})
         else:
