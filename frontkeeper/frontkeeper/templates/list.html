@@ -8,7 +8,7 @@
 	   <h2> Password file list : </h2>
 	{% load tags %}
 	{% for filename  in files %}
-        <form method="post" action="">{% csrf_token %}
+	<form method="post" action="" onsubmit="return confirm('Are you sure you want to remove {{filename}} ?');">{% csrf_token %}
 	<div> <a style="padding-right:50px" href='{% url 'edit' filename %}'>{{filename}}</a>
 	<input type="submit" value="Remove" name=Remove"><input type="hidden" name=fileid value='{{filename}}'/></div>
 	</form>
@@ -23,13 +23,14 @@
     <div class="span5">
           <h2> Raw file list : </h2>
 	{% for filename, value  in filesraw.iteritems %}
-        <form method="post" action="">{% csrf_token %}
+	<form method="post" action="" onsubmit="return confirm('Are you sure you want to remove {{filename}}?');">{% csrf_token %}
 	<div> <font style="padding-right:50px">{{value.name}}</font>
-		<input type="submit" value="Remove" name=Remove"><input type="hidden" name=fileid value='{{value.path}}'/></div>
+		<input type="submit" value="Remove" name=Remove"><input type="hidden" name=fileid value='{{value.path}}/{{value.name}}'/></div>
 	</form>
 	
         {% endfor %}
     </div>
 </div>
 Current state : <font color=red> {{ state }} </font>
+
 {% endblock %}
