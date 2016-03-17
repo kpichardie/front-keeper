@@ -43,10 +43,7 @@ def decrypt(request):
             mypasskeeper = Passkeeper(directory=settings.PASSKEEPER_PATH)
 
             decryption = mypasskeeper.decrypt(passphrase=form.cleaned_data['password'])
-            if not decryption:
-                settings.PASSKEEPER_ENCRYPT_STATE = 'True'
-            else:
-                settings.PASSKEEPER_ENCRYPT_STATE = 'False'
+            if decryption:
                 os.remove(settings.PASSKEEPER_ENCRYPT_STATE_FILE)
             #return HttpResponseRedirect('/')
 

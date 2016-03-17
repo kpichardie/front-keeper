@@ -47,7 +47,6 @@ def clean(request):
         state='Encrypted /!\/!\/!\ It\'s already encrypted /!\/!\/!\ ' 
     else:
         state='Decrypted, you can encrypt'
-        settings.PASSKEEPER_ENCRYPT_STATE = 'True'
         f = open(settings.PASSKEEPER_ENCRYPT_STATE_FILE, 'w+')
         f.write("")
         f.close()

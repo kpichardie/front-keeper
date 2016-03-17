@@ -47,7 +47,6 @@ def encrypt(request):
             LOG.info('test %s' % mypasskeeper.directory)
             mypasskeeper.encrypt(commit_message="Update encrypted files through frontkeeper",passphrase=form.cleaned_data['password'])
             mypasskeeper.cleanup_ini(force_remove=True)
-            settings.PASSKEEPER_ENCRYPT_STATE = 'True'
             f = open(settings.PASSKEEPER_ENCRYPT_STATE_FILE , 'w+')
             f.write("")
             f.close()
