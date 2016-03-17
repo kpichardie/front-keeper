@@ -25,9 +25,9 @@ Configuration in settings.py :
 
 PASSKEEPER_PATH : Path of the passkeeper directory (could permit to integrate an initialied one)
 
-PASSKEEPER_ENCRYPT_STATE : Default encryption state of passkeeper (True : encrypted, False : decrypted)
+PASSKEEPER_ENCRYPT_STATE_FILE : Encryption state file name, if exist then passkeeper password are encrypted.
 
-DISABLE_INIT : Default value is false, when you passkeeper is enabled no need to init again so you can disable it.
+DISABLE_INIT : Default value is false, when your passkeeper is init no need to init again so you can disable it.
 
 ## INSTALL 
 
