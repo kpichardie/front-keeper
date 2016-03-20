@@ -31,20 +31,11 @@ DISABLE_INIT : Default value is false, when your passkeeper is init no need to i
 
 ## INSTALL 
 
-###Install prerequisite passkeeper 
-
-```
-apt-get install git python-pip git -y
-
-pip install git+git://github.com/shaftmx/passkeeper -r https://raw.githubusercontent.com/shaftmx/passkeeper/master/requirements.txt --upgrade
-```
-
-##Install Frontkeeper
-
 ```
 #cd /var/www
+apt-get install git python-pip git -y
 
-pip install django
+pip install -r https://raw.githubusercontent.com/kpichardie/front-keeper/master/requirements.txt
 
 git clone https://github.com/kpichardie/front-keeper.git
 ```

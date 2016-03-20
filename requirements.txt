@@ -1,0 +1,4 @@
+python-gnupg
+argparse
+django
+git+git://github.com/shaftmx/passkeeper
