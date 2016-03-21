@@ -46,4 +46,4 @@ passwords if existing /!\/!\/!\ '
 
             return render(request, 'init.html',
                           context={'form': form, 'state': state})
-        return render(request, 'init-disabled.html')
+    return render(request, 'init-disabled.html')
