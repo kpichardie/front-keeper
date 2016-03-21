@@ -1,0 +1,222 @@
+2016-03-17 14:40:25,451 INFO -: Clean file test.ini
+2016-03-17 14:40:25,586 INFO -: Clean directory default.raw
+2016-03-17 14:40:25,586 INFO -: Clean file blah.crt
+2016-03-17 14:40:25,692 INFO -: Clean file ssh.key
+2016-03-17 14:40:25,798 INFO -: Clean file ssh-key.raw.key
+2016-03-17 14:40:26,038 INFO -: Clean file hfghgfh.ini
+2016-03-17 14:40:26,206 INFO -: Clean file default.ini
+2016-03-17 14:40:26,370 INFO -: Clean file ffrefre.ini
+2016-03-17 14:40:26,546 INFO -: Clean file gfg.ini
+2016-03-17 14:40:26,684 INFO -: Clean directory certs.raw
+2016-03-17 14:40:26,684 INFO -: Clean file key.crt
+2016-03-17 15:04:34,348 INFO -: Clean file test.ini
+2016-03-17 15:04:34,491 INFO -: Clean directory default.raw
+2016-03-17 15:04:34,491 INFO -: Clean file ssh.key
+2016-03-17 15:04:34,572 INFO -: Clean file ssh-key.raw.key
+2016-03-17 15:04:34,786 INFO -: Clean file hfghgfh.ini
+2016-03-17 15:04:34,967 INFO -: Clean file default.ini
+2016-03-17 15:04:35,140 INFO -: Clean file gfg.ini
+2016-03-17 15:04:35,261 INFO -: Clean directory certs.raw
+2016-03-17 15:04:35,261 INFO -: Clean file key.crt
+2016-03-17 15:04:55,674 INFO -: Decrypt files :
+2016-03-17 15:04:55,675 INFO -: Decrypt file default.raw/ssh.key.passkeeper
+2016-03-17 15:04:55,675 INFO -: Create directory : /opt/mypasskeeper/default.raw
+2016-03-17 15:04:55,690 INFO -: decryption ok
+2016-03-17 15:04:55,690 INFO -: Decrypt file default.raw/ssh-key.raw.key.passkeeper
+2016-03-17 15:04:55,701 INFO -: decryption ok
+2016-03-17 15:04:55,701 INFO -: Decrypt file certs.raw/key.crt.passkeeper
+2016-03-17 15:04:55,701 INFO -: Create directory : /opt/mypasskeeper/certs.raw
+2016-03-17 15:04:55,712 INFO -: decryption ok
+2016-03-17 15:04:55,713 INFO -: Decrypt file gfg.ini.passkeeper
+2016-03-17 15:04:55,727 INFO -: decryption ok
+2016-03-17 15:04:55,727 INFO -: Decrypt file default.ini.passkeeper
+2016-03-17 15:04:55,745 INFO -: decryption ok
+2016-03-17 15:04:55,745 INFO -: Decrypt file test.ini.passkeeper
+2016-03-17 15:04:55,761 INFO -: decryption ok
+2016-03-17 15:04:55,761 INFO -: Decrypt file hfghgfh.ini.passkeeper
+2016-03-17 15:04:55,773 INFO -: decryption ok
+2016-03-17 15:05:03,924 INFO -: Clean file test.ini
+2016-03-17 15:05:03,924 INFO -: Clean file test.ini
+2016-03-17 15:05:04,115 INFO -: Clean directory default.raw
+2016-03-17 15:05:04,115 INFO -: Clean directory default.raw
+2016-03-17 15:05:04,116 INFO -: Clean file ssh.key
+2016-03-17 15:05:04,116 INFO -: Clean file ssh.key
+2016-03-17 15:05:04,185 INFO -: Clean file ssh-key.raw.key
+2016-03-17 15:05:04,185 INFO -: Clean file ssh-key.raw.key
+2016-03-17 15:05:04,397 INFO -: Clean file hfghgfh.ini
+2016-03-17 15:05:04,397 INFO -: Clean file hfghgfh.ini
+2016-03-17 15:05:04,606 INFO -: Clean file default.ini
+2016-03-17 15:05:04,606 INFO -: Clean file default.ini
+2016-03-17 15:05:04,803 INFO -: Clean file gfg.ini
+2016-03-17 15:05:04,803 INFO -: Clean file gfg.ini
+2016-03-17 15:05:04,951 INFO -: Clean directory certs.raw
+2016-03-17 15:05:04,951 INFO -: Clean directory certs.raw
+2016-03-17 15:05:04,951 INFO -: Clean file key.crt
+2016-03-17 15:05:04,951 INFO -: Clean file key.crt
+2016-03-17 15:17:46,694 INFO -: Clean file test.ini
+2016-03-17 15:17:46,840 INFO -: Clean directory default.raw
+2016-03-17 15:17:46,840 INFO -: Clean file ssh.key
+2016-03-17 15:17:46,908 INFO -: Clean file ssh-key.raw.key
+2016-03-17 15:17:47,106 INFO -: Clean file hfghgfh.ini
+2016-03-17 15:17:47,281 INFO -: Clean file default.ini
+2016-03-17 15:17:47,458 INFO -: Clean file gfg.ini
+2016-03-17 15:17:47,567 INFO -: Clean directory certs.raw
+2016-03-17 15:17:47,568 INFO -: Clean file key.crt
+2016-03-17 16:40:09,714 INFO -: Clean file test.ini
+2016-03-17 16:40:09,849 INFO -: Clean directory default.raw
+2016-03-17 16:40:09,849 INFO -: Clean file ssh.key
+2016-03-17 16:40:09,937 INFO -: Clean file ssh-key.raw.key
+2016-03-17 16:40:10,157 INFO -: Clean file hfghgfh.ini
+2016-03-17 16:40:10,340 INFO -: Clean file default.ini
+2016-03-17 16:40:10,525 INFO -: Clean file gfg.ini
+2016-03-17 16:40:10,639 INFO -: Clean directory certs.raw
+2016-03-17 16:40:10,639 INFO -: Clean file key.crt
+2016-03-17 16:40:16,766 INFO -: Decrypt files :
+2016-03-17 16:40:16,767 INFO -: Decrypt file default.raw/ssh.key.passkeeper
+2016-03-17 16:40:16,768 INFO -: Create directory : /opt/mypasskeeper/default.raw
+2016-03-17 16:40:16,784 INFO -: decryption ok
+2016-03-17 16:40:16,785 INFO -: Decrypt file default.raw/ssh-key.raw.key.passkeeper
+2016-03-17 16:40:16,803 INFO -: decryption ok
+2016-03-17 16:40:16,804 INFO -: Decrypt file certs.raw/key.crt.passkeeper
+2016-03-17 16:40:16,804 INFO -: Create directory : /opt/mypasskeeper/certs.raw
+2016-03-17 16:40:16,822 INFO -: decryption ok
+2016-03-17 16:40:16,823 INFO -: Decrypt file gfg.ini.passkeeper
+2016-03-17 16:40:16,839 INFO -: decryption ok
+2016-03-17 16:40:16,839 INFO -: Decrypt file default.ini.passkeeper
+2016-03-17 16:40:16,854 INFO -: decryption ok
+2016-03-17 16:40:16,855 INFO -: Decrypt file test.ini.passkeeper
+2016-03-17 16:40:16,867 INFO -: decryption ok
+2016-03-17 16:40:16,867 INFO -: Decrypt file hfghgfh.ini.passkeeper
+2016-03-17 16:40:16,887 INFO -: decryption ok
+2016-03-17 16:40:22,630 INFO -: Encryption
+2016-03-17 16:40:22,630 INFO -: Encrypt files :
+2016-03-17 16:40:22,630 INFO -: Encrypt file test.ini
+2016-03-17 16:40:22,646 INFO -: encryption ok
+2016-03-17 16:40:22,652 INFO -: Encrypt file default.raw/ssh.key
+2016-03-17 16:40:22,675 INFO -: encryption ok
+2016-03-17 16:40:22,683 INFO -: Encrypt file default.raw/ssh-key.raw.key
+2016-03-17 16:40:22,700 INFO -: encryption ok
+2016-03-17 16:40:22,703 INFO -: Encrypt file hfghgfh.ini
+2016-03-17 16:40:22,711 INFO -: encryption ok
+2016-03-17 16:40:22,714 INFO -: Encrypt file default.ini
+2016-03-17 16:40:22,728 INFO -: encryption ok
+2016-03-17 16:40:22,735 INFO -: Encrypt file gfg.ini
+2016-03-17 16:40:22,752 INFO -: encryption ok
+2016-03-17 16:40:22,759 INFO -: Encrypt file certs.raw/key.crt
+2016-03-17 16:40:22,773 INFO -: encryption ok
+2016-03-17 16:40:22,795 INFO -: Clean file test.ini
+2016-03-17 16:40:22,965 INFO -: Clean directory default.raw
+2016-03-17 16:40:22,965 INFO -: Clean file ssh.key
+2016-03-17 16:40:23,042 INFO -: Clean file ssh-key.raw.key
+2016-03-17 16:40:23,248 INFO -: Clean file hfghgfh.ini
+2016-03-17 16:40:23,416 INFO -: Clean file default.ini
+2016-03-17 16:40:23,585 INFO -: Clean file gfg.ini
+2016-03-17 16:40:23,716 INFO -: Clean directory certs.raw
+2016-03-17 16:40:23,717 INFO -: Clean file key.crt
+2016-03-17 16:40:29,674 INFO -: Decrypt files :
+2016-03-17 16:40:29,674 INFO -: Decrypt file default.raw/ssh.key.passkeeper
+2016-03-17 16:40:29,675 INFO -: Create directory : /opt/mypasskeeper/default.raw
+2016-03-17 16:40:29,688 INFO -: decryption ok
+2016-03-17 16:40:29,688 INFO -: Decrypt file default.raw/ssh-key.raw.key.passkeeper
+2016-03-17 16:40:29,705 INFO -: decryption ok
+2016-03-17 16:40:29,705 INFO -: Decrypt file certs.raw/key.crt.passkeeper
+2016-03-17 16:40:29,705 INFO -: Create directory : /opt/mypasskeeper/certs.raw
+2016-03-17 16:40:29,713 INFO -: decryption ok
+2016-03-17 16:40:29,713 INFO -: Decrypt file gfg.ini.passkeeper
+2016-03-17 16:40:29,720 INFO -: decryption ok
+2016-03-17 16:40:29,721 INFO -: Decrypt file default.ini.passkeeper
+2016-03-17 16:40:29,735 INFO -: decryption ok
+2016-03-17 16:40:29,736 INFO -: Decrypt file test.ini.passkeeper
+2016-03-17 16:40:29,753 INFO -: decryption ok
+2016-03-17 16:40:29,754 INFO -: Decrypt file hfghgfh.ini.passkeeper
+2016-03-17 16:40:29,766 INFO -: decryption ok
+2016-03-17 16:47:39,716 INFO -: File encrypted/gfg.ini.passkeeper will be deleted because origin file hasn t been found.
+2016-03-17 16:47:39,776 INFO -: Clean file test.ini
+2016-03-17 16:47:39,939 INFO -: Clean directory default.raw
+2016-03-17 16:47:39,939 INFO -: Clean file ssh.key
+2016-03-17 16:47:40,019 INFO -: Clean file ssh-key.raw.key
+2016-03-17 16:47:40,245 INFO -: Clean file hfghgfh.ini
+2016-03-17 16:47:40,433 INFO -: Clean file default.ini
+2016-03-17 16:47:40,607 INFO -: Clean directory certs.raw
+2016-03-17 16:47:40,607 INFO -: Clean file key.crt
+2016-03-17 16:47:46,153 INFO -: Decrypt files :
+2016-03-17 16:47:46,153 INFO -: Decrypt file default.raw/ssh.key.passkeeper
+2016-03-17 16:47:46,154 INFO -: Create directory : /opt/mypasskeeper/default.raw
+2016-03-17 16:47:46,168 INFO -: decryption ok
+2016-03-17 16:47:46,168 INFO -: Decrypt file default.raw/ssh-key.raw.key.passkeeper
+2016-03-17 16:47:46,182 INFO -: decryption ok
+2016-03-17 16:47:46,183 INFO -: Decrypt file certs.raw/key.crt.passkeeper
+2016-03-17 16:47:46,183 INFO -: Create directory : /opt/mypasskeeper/certs.raw
+2016-03-17 16:47:46,196 INFO -: decryption ok
+2016-03-17 16:47:46,196 INFO -: Decrypt file default.ini.passkeeper
+2016-03-17 16:47:46,211 INFO -: decryption ok
+2016-03-17 16:47:46,211 INFO -: Decrypt file test.ini.passkeeper
+2016-03-17 16:47:46,227 INFO -: decryption ok
+2016-03-17 16:47:46,228 INFO -: Decrypt file hfghgfh.ini.passkeeper
+2016-03-17 16:47:46,244 INFO -: decryption ok
+2016-03-17 16:47:47,620 INFO -: Clean file test.ini
+2016-03-17 16:47:47,620 INFO -: Clean file test.ini
+2016-03-17 16:47:47,759 INFO -: Clean directory default.raw
+2016-03-17 16:47:47,759 INFO -: Clean directory default.raw
+2016-03-17 16:47:47,759 INFO -: Clean file ssh.key
+2016-03-17 16:47:47,759 INFO -: Clean file ssh.key
+2016-03-17 16:47:47,844 INFO -: Clean file ssh-key.raw.key
+2016-03-17 16:47:47,844 INFO -: Clean file ssh-key.raw.key
+2016-03-17 16:47:48,051 INFO -: Clean file hfghgfh.ini
+2016-03-17 16:47:48,051 INFO -: Clean file hfghgfh.ini
+2016-03-17 16:47:48,233 INFO -: Clean file default.ini
+2016-03-17 16:47:48,233 INFO -: Clean file default.ini
+2016-03-17 16:47:48,440 INFO -: Clean directory certs.raw
+2016-03-17 16:47:48,440 INFO -: Clean directory certs.raw
+2016-03-17 16:47:48,440 INFO -: Clean file key.crt
+2016-03-17 16:47:48,440 INFO -: Clean file key.crt
+2016-03-17 16:47:55,508 INFO -: Decrypt files :
+2016-03-17 16:47:55,508 INFO -: Decrypt files :
+2016-03-17 16:47:55,508 INFO -: Decrypt file default.raw/ssh.key.passkeeper
+2016-03-17 16:47:55,508 INFO -: Decrypt file default.raw/ssh.key.passkeeper
+2016-03-17 16:47:55,508 INFO -: Create directory : /opt/mypasskeeper/default.raw
+2016-03-17 16:47:55,508 INFO -: Create directory : /opt/mypasskeeper/default.raw
+2016-03-17 16:47:55,518 INFO -: decryption ok
+2016-03-17 16:47:55,518 INFO -: decryption ok
+2016-03-17 16:47:55,518 INFO -: Decrypt file default.raw/ssh-key.raw.key.passkeeper
+2016-03-17 16:47:55,518 INFO -: Decrypt file default.raw/ssh-key.raw.key.passkeeper
+2016-03-17 16:47:55,529 INFO -: decryption ok
+2016-03-17 16:47:55,529 INFO -: decryption ok
+2016-03-17 16:47:55,530 INFO -: Decrypt file certs.raw/key.crt.passkeeper
+2016-03-17 16:47:55,530 INFO -: Decrypt file certs.raw/key.crt.passkeeper
+2016-03-17 16:47:55,530 INFO -: Create directory : /opt/mypasskeeper/certs.raw
+2016-03-17 16:47:55,530 INFO -: Create directory : /opt/mypasskeeper/certs.raw
+2016-03-17 16:47:55,540 INFO -: decryption ok
+2016-03-17 16:47:55,540 INFO -: decryption ok
+2016-03-17 16:47:55,540 INFO -: Decrypt file default.ini.passkeeper
+2016-03-17 16:47:55,540 INFO -: Decrypt file default.ini.passkeeper
+2016-03-17 16:47:55,556 INFO -: decryption ok
+2016-03-17 16:47:55,556 INFO -: decryption ok
+2016-03-17 16:47:55,556 INFO -: Decrypt file test.ini.passkeeper
+2016-03-17 16:47:55,556 INFO -: Decrypt file test.ini.passkeeper
+2016-03-17 16:47:55,571 INFO -: decryption ok
+2016-03-17 16:47:55,571 INFO -: decryption ok
+2016-03-17 16:47:55,572 INFO -: Decrypt file hfghgfh.ini.passkeeper
+2016-03-17 16:47:55,572 INFO -: Decrypt file hfghgfh.ini.passkeeper
+2016-03-17 16:47:55,587 INFO -: decryption ok
+2016-03-17 16:47:55,587 INFO -: decryption ok
+2016-03-17 16:48:54,432 INFO -: Search in files :
+2016-03-17 16:48:54,432 INFO -: Search in files :
+2016-03-17 16:48:54,432 INFO -: Loading file test.ini
+2016-03-17 16:48:54,432 INFO -: Loading file test.ini
+2016-03-17 16:48:54,432 INFO -: Loading file hfghgfh.ini
+2016-03-17 16:48:54,432 INFO -: Loading file hfghgfh.ini
+2016-03-17 16:48:54,433 INFO -: Loading file default.ini
+2016-03-17 16:48:54,433 INFO -: Loading file default.ini
+2016-03-17 16:48:54,433 INFO -: Loading file blah.ini
+2016-03-17 16:48:54,433 INFO -: Loading file blah.ini
+2016-03-17 16:51:32,983 INFO -: Clean file test.ini
+2016-03-17 16:51:33,137 INFO -: Clean directory default.raw
+2016-03-17 16:51:33,137 INFO -: Clean file ssh.key
+2016-03-17 16:51:33,239 INFO -: Clean file blahraw
+2016-03-17 16:51:33,370 INFO -: Clean file ssh-key.raw.key
+2016-03-17 16:51:33,596 INFO -: Clean file hfghgfh.ini
+2016-03-17 16:51:33,750 INFO -: Clean file default.ini
+2016-03-17 16:51:33,928 INFO -: Clean file blah.ini
+2016-03-17 16:51:34,118 INFO -: Clean directory certs.raw
+2016-03-17 16:51:34,119 INFO -: Clean file key.crt
