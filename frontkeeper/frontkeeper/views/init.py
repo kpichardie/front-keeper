@@ -27,7 +27,7 @@ def init(request):
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
         form = PasswordForm(request.POST)
-        if form.passwordis_valid():
+        if form.is_valid():
             init_logger()
             mypasskeeper = Passkeeper(directory=settings.PASSKEEPER_PATH)
             mypasskeeper.init_dir(passphrase=form.cleaned_data['password'])
@@ -36,7 +36,7 @@ def init(request):
             f.close()
     # if a GET (or any other method) we'll create a blank form
     else:
-        if not settings.DISABLE_INIT:
+        if settings.DISABLE_INIT != 'True':
             form = PasswordForm()
             if os.path.exists(settings.PASSKEEPER_ENCRYPT_STATE_FILE):
                 state = 'Encrypted or clean /!\/!\/!\ you will erase \
