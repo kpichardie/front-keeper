@@ -29,7 +29,7 @@ PASSKEEPER_ENCRYPT_STATE_FILE : Encryption state file name, if exist then passke
 
 DISABLE_INIT : Default value is false, when your passkeeper is init no need to init again so you can disable it.
 
-## INSTALL 
+## MANUAL INSTALL 
 
 ```
 #cd /var/www
