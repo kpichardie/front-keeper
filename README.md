@@ -34,9 +34,7 @@ DISABLE_INIT : Default value is false, when your passkeeper is init no need to i
 ```
 #cd /var/www
 apt-get install python-pip git -y
-
 pip install -r https://raw.githubusercontent.com/kpichardie/front-keeper/master/requirements.txt
-
 git clone https://github.com/kpichardie/front-keeper.git
 ```
 
