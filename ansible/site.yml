@@ -1,0 +1,7 @@
+---
+- name: Install passkeeper, frontkeeper
+  hosts: frontkeeper
+  remote_user: root
+
+  roles:
+    - frontkeeper
