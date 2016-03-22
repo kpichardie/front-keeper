@@ -50,7 +50,7 @@ git clone https://github.com/kpichardie/front-keeper.git
 
 ```ansible-playbook site.yml```
 
-###
+### With nginx managed
 
 ```ansible-playbook site.yml -e "manage_nginx=True"```
 
