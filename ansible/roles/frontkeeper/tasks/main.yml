@@ -10,6 +10,9 @@
   git: repo=https://github.com/kpichardie/front-keeper.git
        dest=/var/www/front-keeper
 
+- name: Copy Frontkeeper configuration
+  template: src=settings.py.j2 dest={{frontkeeper_clone_path}}/front-keeper/frontkeeper/frontkeeper/settings.py
+
 - name: Copy supervisor configuration
   template: src=supervisor-frontkeeper.conf.j2 dest=/etc/supervisor/conf.d/frontkeeper.conf
   notify: restart supervisor

@@ -32,10 +32,12 @@ DISABLE_INIT : Default value is false, when your passkeeper is init no need to i
 ## MANUAL INSTALL 
 
 ```
-#cd /var/www
+# cd /var/www
 apt-get install python-pip git -y
 pip install -r https://raw.githubusercontent.com/kpichardie/front-keeper/master/requirements.txt
 git clone https://github.com/kpichardie/front-keeper.git
+# Change SECRET_KEY for frontkeeper settings in frontkeeper/frontkeeper/settings.py
+# use `pwgen -sy 50 1` to generate pass (avoid "'" in key)
 ```
 
 ### Manually Start Server
@@ -51,6 +53,8 @@ service supervisor restart
 ```
 
 ## Ansible deploy
+
+Please first configure secret_key in ansible/roles/frontkeeper/vars/main.yml
 
 ### Without nginx managed 
 
