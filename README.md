@@ -40,9 +40,15 @@ pip install -r https://raw.githubusercontent.com/kpichardie/front-keeper/master/
 git clone https://github.com/kpichardie/front-keeper.git
 ```
 
-### Start Server
+### Manually Start Server
 
-```/usr/bin/python manage.py runserver 0.0.0.0:8080 ```
+```/usr/bin/python manage.py runserver 0.0.0.0:8080```
+
+### Supervisor Install
+
+```apt-get install supervisor -y
+cp front-keeper/supervisor-frontkeeper.conf /etc/supervisor/conf.d/frontkeeper.conf
+service supervisor restart```
 
 ## Ansible deploy
 
