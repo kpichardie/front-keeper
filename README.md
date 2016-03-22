@@ -54,7 +54,7 @@ git clone https://github.com/kpichardie/front-keeper.git
 
 ```ansible-playbook site.yml -e "manage_nginx=True"```
 
-### NGINX CONF 
+## NGINX CONFIG EXAMPLE
 
 ```
 server {
