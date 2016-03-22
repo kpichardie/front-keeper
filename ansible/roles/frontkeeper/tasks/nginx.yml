@@ -1,0 +1,9 @@
+---
+- name: Install Nginx
+  apt: name=nginx state=present
+
+- name: Copy Nginx configuration
+  template: src=nginx-frontkeeper.conf.j2 dest=/etc/nginx/conf.d/frontkeeper.conf
+  notify: restart nginx        
+
+- service: name=nginx state=started
