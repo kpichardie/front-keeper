@@ -1,0 +1,21 @@
+server {
+     listen 80;
+
+     server_name {{web_hostname}}
+
+     keepalive_timeout 5;
+
+     root {{frontkeeper_clone_path}}/front-keeper/frontkeeper;
+
+     location / {
+       # checks for static file, if not found proxy to app
+       try_files $uri @proxy_to_app;
+     }
+     location @proxy_to_app {
+       proxy_redirect off;
+       proxy_pass http://{{frontkeeper_django_ip}}:{{frontkeeper_django_port}};
+     }
+
+    access_log {{nginx_log_path}}/access_frontkeeper.log;
+    error_log {{nginx_log_path}}/error_frontkeeper.log;
+}

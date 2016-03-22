@@ -1,0 +1,34 @@
+---
+
+- name: Install python-pip
+  apt: name=python-pip state=present
+        
+- name: Install git
+  apt: name=git state=present
+
+- name: Install nginx
+  apt: name=nginx state=present
+
+- name: Install supervisor
+  apt: name=supervisor state=present
+
+- name: Install FrontKeeper
+  pip: requirements='https://raw.githubusercontent.com/kpichardie/front-keeper/master/requirements.txt' 
+
+- name: Clone FrontKeeper
+  git: repo=https://github.com/kpichardie/front-keeper.git
+       dest=/var/www/front-keeper
+
+- name: Copy supervisor configuration
+  template: src=supervisor-frontkeeper.conf.j2 dest=/etc/supervisor/conf.d/frontkeeper.conf
+  notify: restart supervisor
+
+- name: Copy Nginx configuration
+  template: src=nginx-frontkeeper.conf.j2 dest=/etc/nginx/conf.d/frontkeeper.conf
+  notify: restart nginx        
+
+- file: path={{passkeeper_path}} owner={{django_user}} group=root mode=0755 state=directory
+
+- service: name=supervisor state=started
+- service: name=nginx state=started
+

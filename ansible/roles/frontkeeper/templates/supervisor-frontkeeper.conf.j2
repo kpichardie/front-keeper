@@ -1,0 +1,11 @@
+[program:frontkeeper_django_server]
+user={{django_user}}
+directory={{frontkeeper_clone_path}}/front-keeper/frontkeeper
+command=/usr/bin/python manage.py runserver 0.0.0.0:8080 --noreload
+process_name=frontkeeper
+numprocs=1
+autostart=true
+autorestart=true
+startsecs=40
+startretries=10
+stopsignal=TERM

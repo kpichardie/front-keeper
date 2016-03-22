@@ -1,3 +1,0 @@
----
-- name: Install python
-    apt: name=python state=present

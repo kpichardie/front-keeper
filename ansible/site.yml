@@ -1,10 +1,7 @@
 ---
 - name: Install passkeeper, frontkeeper
-  hosts: frontkeeper-server
+  hosts: frontkeeper
   remote_user: root
 
   roles:
-    - common
-    - passkeeper
-    - django
     - frontkeeper
