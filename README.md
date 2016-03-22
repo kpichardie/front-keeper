@@ -47,7 +47,9 @@ git clone https://github.com/kpichardie/front-keeper.git
 ### Supervisor Install
 
 ```apt-get install supervisor -y
+
 cp front-keeper/supervisor-frontkeeper.conf /etc/supervisor/conf.d/frontkeeper.conf
+
 service supervisor restart```
 
 ## Ansible deploy
