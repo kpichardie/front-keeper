@@ -1,19 +1,39 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+    All specifics forms used in frontkeeper
+"""
 from django import forms
 
 
 class SearchForm(forms.Form):
+    """
+        Form with a charfield
+    """
     search = forms.CharField(label='Search in password', max_length=100)
 
 
 class PasswordForm(forms.Form):
+    """
+        Form with a password
+    """
     password = forms.CharField(widget=forms.PasswordInput())
 
 
-class SubmitForm(forms.Form):
+class EmptyForm(forms.Form):
+    """
+        Empty form
+    """
     validate = "valid"
 
 
 class NewForm(forms.Form):
+    """
+        Form with one charfield for name of the new file
+        Charfield to fill the password and info need
+        Checkbox to determine it's a raw file
+    """
     filename = forms.CharField(widget=forms.Textarea(attrs={'rows': 1}))
     info = forms.CharField(widget=forms.Textarea(attrs={'cols': 160,
                                                         'rows': 30,
@@ -25,17 +45,11 @@ class NewForm(forms.Form):
 
 
 class EditForm(forms.Form):
+    """
+        Form to edit password on a charfield
+    """
     info = forms.CharField(widget=forms.Textarea(attrs={'cols': 160,
                                                         'rows': 30,
                                                         'style': 'width: auto;'
                                                         }))
     validate = "valid"
-
-
-class CustomForm(forms.Form):
-    validate = "valid"
-
-
-class ReadForm(forms.Form):
-
-    filename = forms.CharField(widget=forms.Textarea(attrs={'rows': 1}))

@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+    View for the home of frontkeeper
+"""
 from django.template import Context, loader
 from django.http import HttpResponse
 from django.conf import settings
@@ -5,7 +11,9 @@ import os
 
 
 def index(request):
-    # request.path
+    """
+        Display home page
+    """
     the_title = "Frontkeeper Home"
     t = loader.get_template('index.html')
     if os.path.exists(settings.PASSKEEPER_ENCRYPT_STATE_FILE):

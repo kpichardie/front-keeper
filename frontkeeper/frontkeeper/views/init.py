@@ -1,12 +1,23 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+    View managing the init feature of frontkeeper
+"""  
 from django.conf import settings
 from django.shortcuts import render
 from .forms import PasswordForm
+from passkeeper import Passkeeper
 import logging
 import os
-from passkeeper import Passkeeper
 
 
 def init_logger():
+    """ 
+        Initialisation for logger
+        Set the format of logger
+        Create log file in log/
+    """
     # Init logging level with debug stream handler
     log = logging.getLogger('passkeeper')
     log.setLevel(logging.INFO)
@@ -23,6 +34,10 @@ def init_logger():
 
 #  init
 def init(request):
+    """ 
+        Display the init form
+        Init the passkeeper git and add default ini / raw files
+    """
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:

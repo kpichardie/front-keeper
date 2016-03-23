@@ -1,12 +1,23 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+    View managing the search feature of passkeeper and display result
+"""
 from django.conf import settings
 from django.shortcuts import render
 from .forms import SearchForm
+from passkeeper import Passkeeper
 import logging
 import os
-from passkeeper import Passkeeper
 
 
 def init_logger():
+    """ 
+        Initialisation for logger
+        Set the format of logger
+        Create log file in log/
+    """
     # Init logging level with debug stream handler
     log = logging.getLogger()
     log.setLevel(logging.INFO)
@@ -21,8 +32,10 @@ def init_logger():
     return log
 
 
-#  search
 def search(request):
+    """
+        Display the search form to find a patern in ini file
+    """
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:

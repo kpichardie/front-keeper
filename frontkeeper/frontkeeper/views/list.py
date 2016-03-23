@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+    View managing the list of file in you passkeeper
+"""
 from django.conf import settings
 from django.shortcuts import render
 import logging
@@ -5,6 +11,11 @@ import os
 
 
 def init_logger():
+    """ 
+        Initialisation for logger
+        Set the format of logger
+        Create log file in log/
+    """
     # Init logging level with debug stream handler
     log = logging.getLogger('passkeeper')
     log.setLevel(logging.INFO)
@@ -19,8 +30,12 @@ def init_logger():
     return log
 
 
-#  flush
 def list(request):
+    """
+       Display list of ini / raw files
+       Allow click on ini file to edit content
+       Display a button to remove ini / raw files
+    """
     if request.method == 'POST':
         os.remove(os.path.join(settings.PASSKEEPER_PATH,
                   request.POST['fileid']))

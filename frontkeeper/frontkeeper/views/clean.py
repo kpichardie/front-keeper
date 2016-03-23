@@ -1,11 +1,22 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+    View managing the clean feature of frontkeeper
+"""
 from django.conf import settings
 from django.http import HttpResponseRedirect
-import logging
 from passkeeper import Passkeeper
 import os
+import logging
 
 
 def init_logger():
+    """ 
+        Initialisation for logger
+        Set the format of logger
+        Create log file in log/
+    """
     # Init logging level with debug stream handler
     log = logging.getLogger('passkeeper')
     log.setLevel(logging.INFO)
@@ -20,8 +31,10 @@ def init_logger():
     return log
 
 
-#  clean
 def clean(request):
+    """ 
+        Clean all ini / raw files if status isn't encrypted
+    """
     if not os.path.exists(settings.PASSKEEPER_ENCRYPT_STATE_FILE):
         f = open(settings.PASSKEEPER_ENCRYPT_STATE_FILE, 'w+')
         f.write("")

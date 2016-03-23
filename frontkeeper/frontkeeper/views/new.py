@@ -1,13 +1,23 @@
+# -*- coding: utf-8 -*-
+
+"""
+    View managing the creation of new ini / raw files
+"""
 from django.conf import settings
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .forms import NewForm
-from .forms import CustomForm
+from .forms import EmptyForm
 import logging
 import os
 
 
 def init_logger():
+    """ 
+        Initialisation for logger
+        Set the format of logger
+        Create log file in log/
+    """
     # Init logging level with debug stream handler
     log = logging.getLogger('passkeeper')
     log.setLevel(logging.INFO)
@@ -22,8 +32,11 @@ def init_logger():
     return log
 
 
-#  flush
 def new(request):
+    """ 
+        Display the newform to create new ini / raw file
+        A checkbox allow to check if it's a raw file
+    """
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
@@ -34,7 +47,8 @@ def new(request):
                                     form.cleaned_data['filename'])
             filetype = form.cleaned_data['rawfile']
             if filetype == "True":
-                rawfullpath = os.path.join(settings.PASSKEEPER_PATH, "default.raw",
+                rawfullpath = os.path.join(settings.PASSKEEPER_PATH,
+                                           "default.raw",
                                            form.cleaned_data['filename'])
                 if os.path.exists(rawfullpath):
                     print "raw file already exist"
@@ -55,7 +69,7 @@ def new(request):
     # if a GET (or any other method) we'll create a blank form
     else:
         if os.path.exists(settings.PASSKEEPER_ENCRYPT_STATE_FILE):
-            form = CustomForm()
+            form = EmptyForm()
             return render(request, 'new-disabled.html', {'form': form})
         else:
             form = NewForm()

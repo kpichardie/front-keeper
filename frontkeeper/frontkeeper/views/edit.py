@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+    View managing the edition of a password ini file
+"""
 from django.conf import settings
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
@@ -7,6 +13,11 @@ import os
 
 
 def init_logger():
+    """
+        Initialisation for logger
+        Set the format of logger
+        Create log file in log/
+    """
     # Init logging level with debug stream handler
     log = logging.getLogger('passkeeper')
     log.setLevel(logging.INFO)
@@ -21,8 +32,11 @@ def init_logger():
     return log
 
 
-#  flush
 def edit(request, filename):
+    """
+        Display the current info of the ini password file and allow edit
+        Then you can save new content
+    """
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:

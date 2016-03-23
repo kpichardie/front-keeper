@@ -1,12 +1,23 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+    View for the decryption of passkeeper
+"""
 from django.conf import settings
 from django.shortcuts import render
-from .forms import PasswordForm
 from passkeeper import Passkeeper
-import os
+from .forms import PasswordForm
 import logging
+import os
 
 
 def init_logger():
+    """
+        Initialisation for logger
+        Set the format of logger
+        Create log file in log/
+    """
     # Init logging level with debug stream handler
     log = logging.getLogger('passkeeper')
     log.setLevel(logging.INFO)
@@ -23,6 +34,10 @@ def init_logger():
 
 #  decrypt
 def decrypt(request):
+    """
+        Display the formular to decrypt passkeeper files
+        Remove encryption lock file
+    """
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
