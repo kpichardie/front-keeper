@@ -10,3 +10,4 @@ frontkeeper_django_ip: 127.0.0.1
 frontkeeper_django_port: 8080
 web_hostname: frontkeeper
 secret_key: change-me!
+django_debug: False
