@@ -19,6 +19,7 @@ It include feacture :
 ![ScreenShot](https://raw.github.com/kpichardie/front-keeper/master/Screenshots/Search-1.png)
 ![ScreenShot](https://raw.github.com/kpichardie/front-keeper/master/Screenshots/Search-2.png)
 - Flush : Flush the git history of the changes on your passwords and flush Front-keeper logs
+![ScreenShot](https://raw.github.com/kpichardie/front-keeper/master/Screenshots/Flush.png)
 - Clean : Remove all files decrypted (used when you decrypt to search password then want to close without to encrypt. It remove all decrypted as you haven't made modification) Could be equivalent to quit
 
 Configuration in settings.py :
