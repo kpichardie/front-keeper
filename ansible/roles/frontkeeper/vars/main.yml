@@ -1,6 +1,6 @@
 ---
 manage_nginx: False
-packages: [ 'git', 'supervisor', 'python-pip' ]
+packages: [ 'git', 'python-pip' ]
 frontkeeper_clone_path: /var/www
 frontkeeper_init_disabled: False
 django_user: root

@@ -1,0 +1,9 @@
+---
+- name: Install supervisor
+  apt: name=supervisor state=present
+
+- name: Copy supervisor configuration
+  template: src=supervisor-frontkeeper.conf.j2 dest=/etc/supervisor/conf.d/frontkeeper.conf
+  notify: restart supervisor
+
+- service: name=supervisor state=started
