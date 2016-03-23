@@ -9,5 +9,7 @@
 - name: Copy Frontkeeper configuration
   template: src=settings.py.j2 dest={{frontkeeper_clone_path}}/front-keeper/frontkeeper/frontkeeper/settings.py
 
-- file: path={{passkeeper_path}} owner={{django_user}} group=root mode=0755 state=directory
+- file: path={{frontkeeper_clone_path}} owner={{django_user}} group={{django_user}} recurse=yes
+- file: path={{frontkeeper_clone_path}}/front-keeper owner={{django_user}} group={{django_user}} recurse=yes
+- file: path={{passkeeper_path}} owner={{django_user}} group={{django_user}} mode=0755 state=directory
 

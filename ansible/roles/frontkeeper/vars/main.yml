@@ -3,7 +3,7 @@ manage_nginx: False
 packages: [ 'git', 'python-pip' ]
 frontkeeper_clone_path: /var/www
 frontkeeper_init_disabled: False
-django_user: root
+django_user: www-data
 passkeeper_path: /opt/mypasskeeper
 nginx_log_path: /var/log
 frontkeeper_django_ip: 127.0.0.1
