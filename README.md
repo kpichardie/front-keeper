@@ -3,8 +3,8 @@ Front-keeper is a basic web interface for passkeeper
 
 This one user interface permit to manage passkeper throught a simple web interface. 
 
-It include feacture : 
-
+- Home : Frontkeeper home page 
+![ScreenShot](https://raw.github.com/kpichardie/front-keeper/master/Screenshots/Home.png)
 - Init : Initialize your git passkeeper project 
 ![ScreenShot](https://raw.github.com/kpichardie/front-keeper/master/Screenshots/Init.png)
 - Decrypt : Decrypt files encrypted using passkeeper
