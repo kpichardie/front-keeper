@@ -11,6 +11,13 @@ server {
        # checks for static file, if not found proxy to app
        try_files $uri @proxy_to_app;
      }
+     
+     location /static {
+       # checks for static file, if not found proxy to app
+       autoindex on;    
+       root {{frontkeeper_clone_path}}/front-keeper/frontkeeper/frontkeeper;
+     }
+
      location @proxy_to_app {
        proxy_redirect off;
        proxy_pass http://{{frontkeeper_django_ip}}:{{frontkeeper_django_port}};

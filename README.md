@@ -81,6 +81,13 @@ server {
        # checks for static file, if not found proxy to app
        try_files $uri @proxy_to_app;
      }
+
+     location /static {
+       # checks for static file, if not found proxy to app
+       autoindex on;    
+       root /var/www/front-keeper/frontkeeper/frontkeeper;
+     }
+
      location @proxy_to_app {
        proxy_redirect off;
        proxy_pass http://127.0.0.1:8080;
