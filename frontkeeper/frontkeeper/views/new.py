@@ -8,28 +8,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .forms import NewForm
 from .forms import EmptyForm
-import logging
 import os
-
-
-def init_logger():
-    """ 
-        Initialisation for logger
-        Set the format of logger
-        Create log file in log/
-    """
-    # Init logging level with debug stream handler
-    log = logging.getLogger('passkeeper')
-    log.setLevel(logging.INFO)
-    # log.setLevel(logging.DEBUG)
-    logformat = '%(asctime)s %(levelname)s -: %(message)s'
-    # Set logger formater
-    formatter = logging.Formatter(logformat)
-    # File handler
-    hdl = logging.FileHandler('log/%s.log' % __name__)
-    hdl.setFormatter(formatter)
-    log.addHandler(hdl)
-    return log
 
 
 def new(request):
@@ -42,7 +21,6 @@ def new(request):
         # create a form instance and populate it with data from the request:
         form = NewForm(request.POST)
         if form.is_valid():
-            init_logger()
             filepath = os.path.join(settings.PASSKEEPER_PATH,
                                     form.cleaned_data['filename'])
             filetype = form.cleaned_data['rawfile']

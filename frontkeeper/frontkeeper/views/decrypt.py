@@ -8,28 +8,8 @@ from django.conf import settings
 from django.shortcuts import render
 from passkeeper import Passkeeper
 from .forms import PasswordForm
-import logging
 import os
 
-
-def init_logger():
-    """
-        Initialisation for logger
-        Set the format of logger
-        Create log file in log/
-    """
-    # Init logging level with debug stream handler
-    log = logging.getLogger('passkeeper')
-    log.setLevel(logging.INFO)
-    # log.setLevel(logging.DEBUG)
-    logformat = '%(asctime)s %(levelname)s -: %(message)s'
-    # Set logger formater
-    formatter = logging.Formatter(logformat)
-    # # File handler
-    hdl = logging.FileHandler('log/%s.log' % __name__)
-    hdl.setFormatter(formatter)
-    log.addHandler(hdl)
-    return log
 
 
 #  decrypt
@@ -45,7 +25,6 @@ def decrypt(request):
         # check whether it's valid:
         if form.is_valid():
             # process the data in form.cleaned_data as required
-            init_logger()
             mypasskeeper = Passkeeper(directory=settings.PASSKEEPER_PATH)
             decryption = mypasskeeper.decrypt(
                          passphrase=form.cleaned_data['password'])

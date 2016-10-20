@@ -8,28 +8,8 @@ from django.conf import settings
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .forms import EditForm
-import logging
 import os
 
-
-def init_logger():
-    """
-        Initialisation for logger
-        Set the format of logger
-        Create log file in log/
-    """
-    # Init logging level with debug stream handler
-    log = logging.getLogger('passkeeper')
-    log.setLevel(logging.INFO)
-    # log.setLevel(logging.DEBUG)
-    logformat = '%(asctime)s %(levelname)s -: %(message)s'
-    # Set logger formater
-    formatter = logging.Formatter(logformat)
-    # File handler
-    hdl = logging.FileHandler('log/%s.log' % __name__)
-    hdl.setFormatter(formatter)
-    log.addHandler(hdl)
-    return log
 
 
 def edit(request, filename):
@@ -42,7 +22,6 @@ def edit(request, filename):
         # create a form instance and populate it with data from the request:
         form = EditForm(request.POST)
         if form.is_valid():
-            init_logger()
             f = open(os.path.join(settings.PASSKEEPER_PATH, filename), 'w')
             f.write(form.cleaned_data['info'])
             f.close()

@@ -6,28 +6,7 @@
 """
 from django.conf import settings
 from django.shortcuts import render
-import logging
 import os
-
-
-def init_logger():
-    """ 
-        Initialisation for logger
-        Set the format of logger
-        Create log file in log/
-    """
-    # Init logging level with debug stream handler
-    log = logging.getLogger('passkeeper')
-    log.setLevel(logging.INFO)
-    # log.setLevel(logging.DEBUG)
-    logformat = '%(asctime)s %(levelname)s -: %(message)s'
-    # Set logger formater
-    formatter = logging.Formatter(logformat)
-    # File handler
-    hdl = logging.FileHandler('log/%s.log' % __name__)
-    hdl.setFormatter(formatter)
-    log.addHandler(hdl)
-    return log
 
 
 def list(request):

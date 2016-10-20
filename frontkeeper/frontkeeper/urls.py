@@ -14,7 +14,29 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
 from django.conf.urls import url, patterns
+import logging
 
+
+def init_logger():
+    """ 
+        Initialisation for logger
+        Set the format of logger
+        Create log file in log/
+    """
+    # Init logging level with debug stream handler
+    log = logging.getLogger('passkeeper')
+    log.setLevel(logging.INFO)
+    # log.setLevel(logging.DEBUG)
+    logformat = '%(asctime)s %(levelname)s -: %(message)s'
+    # Set logger formater
+    formatter = logging.Formatter(logformat)
+    # File handler
+    hdl = logging.FileHandler('log/%s.log' % __name__)
+    hdl.setFormatter(formatter)
+    log.addHandler(hdl)
+    return log
+
+init_logger()
 
 urlpatterns = patterns('frontkeeper.views',
                        url(r'^$', 'index.index'),

@@ -7,7 +7,7 @@ var dataelem = "#data";
 var pausetoggle = "#pause";
 var scrollelems = ["html", "body"];
 
-var url = "/log/frontkeeper.views.flush.log";
+var url = "/log/frontkeeper.urls.log";
 var fix_rn = true;
 var load = 30 * 1024; /* 30KB */
 var poll = 1000; /* 1s */
