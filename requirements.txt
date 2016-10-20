@@ -1,4 +1,4 @@
 python-gnupg
 argparse
-django
+django==1.9
 git+git://github.com/shaftmx/passkeeper
