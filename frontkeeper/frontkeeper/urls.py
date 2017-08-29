@@ -31,7 +31,7 @@ def init_logger():
     # Set logger formater
     formatter = logging.Formatter(logformat)
     # File handler
-    hdl = logging.FileHandler('log/%s.log' % __name__)
+    hdl = logging.FileHandler('%s/log/%s.log' % os.getcwd(),__name__)
     hdl.setFormatter(formatter)
     log.addHandler(hdl)
     return log
