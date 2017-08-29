@@ -35,7 +35,7 @@ def init_logger():
     if 'workdir' in os.environ:
         hdl = logging.FileHandler('%s/log/%s.log' % (os.environ['workdir'],__name__))
     elif 'Docker' in os.environ:
-        hdl = logging.FileHandler('/front-keeper/frontkeeper/log/%s.log' % (,__name__))
+        hdl = logging.FileHandler('/front-keeper/frontkeeper/log/%s.log' % (__name__))
     else: 
         hdl = logging.FileHandler('log/%s.log' % (,__name__))
     hdl.setFormatter(formatter)
