@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, patterns
 import logging
+import os
 
 
 def init_logger():
