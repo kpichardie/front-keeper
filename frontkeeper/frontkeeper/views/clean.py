@@ -19,5 +19,5 @@ def clean(request):
         f.write("")
         f.close()
         mypasskeeper = Passkeeper(directory=settings.PASSKEEPER_PATH)
-        mypasskeeper.cleanup_ini(force_remove=True)
+        mypasskeeper.cleanup()
     return HttpResponseRedirect('/')
